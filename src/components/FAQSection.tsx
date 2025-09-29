@@ -11,39 +11,39 @@ const FAQSection = () => {
   const faqs = [
     {
       id: "item-1",
-      question: "Nunca trabajé con belleza. ¿Puedo hacerlo igual?",
-      answer: "¡SÍ! El Guía Cejas Express™ fue creado específicamente para principiantes. Aprendes desde cero, con técnicas simples que cualquier persona puede dominar en casa.",
-      highlight: "Perfecto para principiantes"
+      question: "¿Nunca estudiaste belleza?",
+      answer: "Bien, esto es para ti. 70% de alumnas empezaron de cero. El Guía Cejas Express™ fue creado específicamente para principiantes sin experiencia.",
+      highlight: "70% empezaron de cero"
     },
     {
       id: "item-2", 
-      question: "¿Cuánto tiempo toma empezar a ganar dinero?",
-      answer: "La mayoría de nuestras alumnas consiguen sus primeras clientas en 7-15 días. ¡Algunas ya empiezan a practicar con amigas y familia en la primera semana!",
-      highlight: "Resultados en 7-15 días"
+      question: "¿Necesitas materiales caros?",
+      answer: "No. Solo tu celular. Todo lo que necesitas para empezar está incluido en la guía. Sin inversiones costosas.",
+      highlight: "Solo tu celular"
     },
     {
       id: "item-3",
-      question: "¿Necesito comprar materiales caros?",
-      answer: "¡NO! Solo necesitas pinzas básicas (que cuestan menos de $5). Todo lo demás aprendes a hacerlo con elementos que ya tienes en casa.",
-      highlight: "Inversión mínima"
+      question: "¿Cuándo puedes ganar?",
+      answer: "Hay alumnas cobrando en la primera semana. La mayoría consigue sus primeras clientas en 7-15 días y ya empiezan a generar ingresos.",
+      highlight: "Primera semana"
     },
     {
       id: "item-4",
-      question: "¿Y si no logro aprender?",
-      answer: "¡Imposible! Tenemos garantía de 7 días. Si no quedas satisfecha, devolvemos 100% de tu dinero, sin preguntas.",
-      highlight: "Garantía 100%"
+      question: "¿Acceso?",
+      answer: "Vitalicio, inmediato. Pagas una vez y tienes acceso para siempre. Puedes revisar el contenido cuantas veces quieras, cuando quieras.",
+      highlight: "Vitalicio e inmediato"
     },
     {
       id: "item-5",
-      question: "¿Cuánto puedo ganar por mes?",
-      answer: "Nuestras alumnas ganan entre $300-$1500 por mes trabajando solo algunas horas por semana. ¡Todo depende de tu dedicación!",
-      highlight: "$300-$1500/mes"
+      question: "¿Grupo privado?",
+      answer: "Sí, incluido. Acceso al grupo VIP exclusivo con más de 80,000 alumnas exitosas donde recibes soporte directo y compartes experiencias.",
+      highlight: "80,000+ miembros"
     },
     {
       id: "item-6",
-      question: "¿El acceso es vitalicio realmente?",
-      answer: "¡SÍ! Pagas una vez y tienes acceso para siempre. Puedes revisar el contenido cuantas veces quieras, cuando quieras.",
-      highlight: "Acceso vitalicio"
+      question: "¿Cuánto puedo ganar realmente?",
+      answer: "Nuestras alumnas ganan entre $300-$1500 por mes trabajando solo algunas horas por semana. Todo depende de tu dedicación y las clientas que atiendas.",
+      highlight: "$300-$1500/mes"
     }
   ];
 
@@ -128,7 +128,7 @@ const FAQSection = () => {
                   size="lg"
                   className="bg-accent hover:bg-accent/90 text-neutral-900 font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
                 >
-                  EMPEZAR AHORA POR SOLO $7
+                  DESCARGAR POR $7
                 </Button>
                 
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80">

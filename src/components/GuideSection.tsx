@@ -197,7 +197,7 @@ const GuideSection = () => {
                   className="bg-white hover:bg-white/90 text-accent font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
                   aria-label="Comenzar con la guía por $7 USD"
                 >
-                  EMPEZAR HOY POR SOLO $7
+                  EMPEZAR YA
                 </Button>
                 
                 <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/80">

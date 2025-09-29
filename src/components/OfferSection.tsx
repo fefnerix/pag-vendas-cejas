@@ -165,14 +165,14 @@ const OfferSection = () => {
                   {/* Enhanced pricing with better visual hierarchy */}
                   <div className="text-center mb-8">
                     <div className="text-white/60 line-through text-xl mb-3 font-medium">
-                      Precio original: <span className="text-2xl">$27 USD</span>
+                      Precio original: <span className="text-2xl">$287 USD</span>
                     </div>
                     <div className="relative">
                       <div className="text-6xl sm:text-7xl font-black text-accent mb-3 drop-shadow-lg">
                         $7
                       </div>
                       <div className="absolute -top-2 -right-4 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-full transform rotate-12">
-                        74% OFF
+                        Hoy $7 USD
                       </div>
                     </div>
                     <div className="text-white/90 text-lg font-medium">

@@ -21,6 +21,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
+  const [hasError, setHasError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -49,6 +50,12 @@ const LazyImage: React.FC<LazyImageProps> = ({
 
   const handleLoad = () => {
     setIsLoaded(true);
+    setHasError(false);
+  };
+
+  const handleError = () => {
+    setHasError(true);
+    setIsLoaded(false);
   };
 
   return (
@@ -63,21 +70,30 @@ const LazyImage: React.FC<LazyImageProps> = ({
           'absolute inset-0 bg-muted',
           'before:absolute before:inset-0 before:animate-shimmer',
           'before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent',
-          isLoaded && 'hidden',
+          (isLoaded || hasError) && 'hidden',
           placeholderClassName
         )}
       />
       
+      {/* Error state */}
+      {hasError && (
+        <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground">
+          <span className="text-sm">Erro ao carregar imagem</span>
+        </div>
+      )}
+      
       {/* Actual image */}
-      {isInView && (
+      {isInView && !hasError && (
         <img
           ref={imgRef}
           src={src}
           alt={alt}
           onLoad={handleLoad}
+          onError={handleError}
           className={cn(
             'absolute inset-0 w-full h-full object-cover',
-            !isLoaded && 'hidden'
+            !isLoaded && 'opacity-0',
+            isLoaded && 'opacity-100 transition-opacity duration-300'
           )}
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"

@@ -6,8 +6,8 @@ const TargetSection = () => {
     <section className="py-12 sm:py-16 bg-pink">{/* SEÇÃO ROSA */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-8 sm:mb-12 px-2">
-            Esta guía fue creada para mujeres que quieren <span className="text-white text-weight-black">dominar el Guia Cejas Express™</span>:
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600 mb-8 sm:mb-12 px-2">
+            Esta guía fue creada para mujeres que quieren <span className="text-purple-700 text-weight-black">dominar el Guia Cejas Express™</span>:
           </h2>
 
           {/* Mobile-first grid */}
@@ -32,8 +32,8 @@ const TargetSection = () => {
             ].map((item, index) => (
               <div key={index} className="bg-white/80 backdrop-blur-sm border border-pink-foreground/10 rounded-xl p-4 sm:p-6 shadow-sm">
                 <div className="flex items-center justify-center gap-3 sm:gap-4">
-                  <item.Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white flex-shrink-0" />
-                  <p className="font-medium text-white text-sm sm:text-base">
+                  <item.Icon className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 flex-shrink-0" />
+                  <p className="font-medium text-purple-700 text-sm sm:text-base">
                     {item.title}
                   </p>
                 </div>
@@ -46,7 +46,8 @@ const TargetSection = () => {
             size="lg" 
             className="w-full sm:w-auto text-sm sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
           >
-            VER LO QUE INCLUYE CEJAS EXPRESS™
+            <span className="hidden sm:inline">VER LO QUE INCLUYE CEJAS EXPRESS™</span>
+            <span className="sm:hidden">VER CONTENIDO</span>
           </Button>
         </div>
       </div>

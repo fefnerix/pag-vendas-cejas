@@ -80,9 +80,9 @@ const QuestionsSection = () => {
             style={{ animationDelay: '500ms' }}
             aria-label="Empezar a ganar dinero desde casa con diseño de cejas"
           >
-            QUIERO EMPEZAR A GANAR DESDE CASA
+            <span className="sm:hidden">EMPEZAR YA</span>
+            <span className="hidden sm:inline">EMPEZAR YA</span>
           </Button>
-        </div>
         </div>
       </div>
     </section>

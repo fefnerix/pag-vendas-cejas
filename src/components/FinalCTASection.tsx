@@ -21,21 +21,25 @@ const FinalCTASection = () => {
               </div>
               
               <div className="mb-6">
-                <h2 className="headline-section text-4xl lg:text-6xl text-white mb-4 leading-tight">
-                  ¡No dependas de{" "}
-                  <span className="text-accent font-black">la suerte!</span>
+                <h2 className="headline-section text-4xl lg:text-6xl text-purple-600 mb-4 leading-tight">
+                  Transforma tus cejas y tu{" "}
+                  <span className="text-accent font-black">futuro financiero</span>
                 </h2>
                 
-                <div className="space-y-3 text-xl text-white/90 leading-relaxed mb-6">
+                <div className="space-y-3 text-xl text-purple-200 leading-relaxed mb-6">
+                  <p className="text-lg text-accent font-bold bg-accent/10 px-4 py-2 rounded-lg inline-block">
+                    Esta oferta NO es para siempre.
+                  </p>
                   <p>
-                    Miles de mujeres ya dieron el primer paso con el{" "}
+                    Cuando el contador llegue a 0, la página se cierra y el precio sube.{" "}
+                    <span className="font-bold text-accent">Ya pasó antes y muchas lloraron después.</span>
+                  </p>
+                  <p>
+                    Únete a miles de mujeres que ya están ganando con el{" "}
                     <span className="font-bold text-accent">Guía Cejas Express™</span>.
                   </p>
-                  <p className="text-2xl font-bold text-white">
-                    Ahora es tu turno.
-                  </p>
-                  <p>
-                    Haz que <span className="text-accent font-bold">$7 trabajen por ti</span>.
+                  <p className="text-2xl font-bold text-purple-600">
+                    No dejes que esta oportunidad se escape.
                   </p>
                 </div>
               </div>
@@ -66,10 +70,10 @@ const FinalCTASection = () => {
                       <Star key={i} className="w-5 h-5 text-accent fill-current" />
                     ))}
                   </div>
-                  <p className="text-lg font-semibold text-white">
+                  <p className="text-lg font-semibold text-purple-600">
                     "El mejor curso de cejas que he tomado"
                   </p>
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-purple-300">
                     - María González, México
                   </p>
                 </div>
@@ -83,12 +87,12 @@ const FinalCTASection = () => {
                       $7 USD
                     </div>
                     <div className="text-lg text-white/80 line-through">
-                      Precio normal: $27
+                      Precio normal: $287
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-success mb-1">
-                      74% OFF
+                      Hoy $7 USD
                     </div>
                     <div className="text-sm text-white/70">
                       Solo por hoy
@@ -114,12 +118,14 @@ const FinalCTASection = () => {
 
               {/* Enhanced CTA button */}
               <div className="space-y-4">
-                <Button 
-                  size="lg"
-                  className="w-full bg-accent hover:bg-accent/90 text-neutral-900 font-black text-xl lg:text-2xl px-12 py-8 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300 min-h-[80px] border-2 border-white/20"
-                >
-                  SÍ, QUIERO TRANSFORMAR MI VIDA AHORA
-                </Button>
+                <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=8" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="lg"
+                    className="w-full bg-accent hover:bg-accent/90 text-neutral-900 font-black text-xl lg:text-2xl px-12 py-8 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300 min-h-[80px] border-2 border-white/20"
+                  >
+                    SÍ, QUIERO GANAR DINERO HOY
+                  </Button>
+                </a>
                 
                 {/* Trust indicators */}
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-white/90">

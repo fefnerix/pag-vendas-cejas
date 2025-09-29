@@ -7,7 +7,7 @@ const BenefitsSection = () => {
     "No necesitas local, experiencia ni herramientas costosas",
     "Aprende desde el celular con acceso inmediato",
     "Guía paso a paso validada por más de 80.000 alumnas",
-    "Certificado profesional incluido",
+    "Garantía de satisfacción de 7 días",
     "Soporte directo en grupo privado"
   ];
 
@@ -35,9 +35,11 @@ const BenefitsSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <button className="btn-primary">
-            Quiero transformar mi vida ahora
-          </button>
+          <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=5" target="_blank" rel="noopener noreferrer">
+            <button className="btn-primary">
+              TRANSFORMAR MI VIDA
+            </button>
+          </a>
         </div>
       </div>
     </div>

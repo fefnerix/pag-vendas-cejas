@@ -12,35 +12,35 @@ const SocialProofSection = () => {
   // Optimized testimonials - Maximum 3 as per guidelines
   const testimonials = [
     {
-      quote: "En mi primera semana ya gané $180!",
+      quote: "Conseguí más de $280 en mi semana 3.",
       text: "No podía creerlo... con solo las técnicas de mapeo ya tengo 3 clientas fijas. El guía funciona de verdad.",
       author: "María S.",
       location: "Ciudad de México, México",
       rating: 5,
-      earnings: "$180/semana",
-      timeframe: "Primera semana",
+      earnings: "$280/semana",
+      timeframe: "Tercera semana",
       avatar: "MS",
       verified: true
     },
     {
-      quote: "Ama de casa → ahora tengo mi negocio propio",
+      quote: "Ya cobré $300 el primer mes. Mis clientas llegan por recomendación.",
       text: "Nunca había trabajado en belleza antes. Las cejas quedaron perfectas desde el primer intento siguiendo la guía paso a paso.",
       author: "Carmen L.",
       location: "Bogotá, Colombia", 
       rating: 5,
-      earnings: "$320/mes",
-      timeframe: "Segundo mes",
+      earnings: "$300/mes",
+      timeframe: "Primer mes",
       avatar: "CL",
       verified: true
     },
     {
-      quote: "Con solo 2h al día, ya gano $800 al mes",
+      quote: "En 2 semanas dejé el trabajo de oficina. Hoy trabajo desde casa y gano el doble.",
       text: "Después del trabajo dedico 2 horas y ya tengo una agenda llena. Mis clientas me refieren siempre.",
       author: "Ana R.",
       location: "Buenos Aires, Argentina",
       rating: 5,
       earnings: "$800/mes",
-      timeframe: "Tercer mes",
+      timeframe: "Segundo mes",
       avatar: "AR",
       verified: true
     }
@@ -197,8 +197,8 @@ const SocialProofSection = () => {
                 </div>
               </div>
               
-              {/* Enhanced mobile navigation */}
-              <div className="flex items-center justify-between mt-6">
+              {/* Enhanced mobile navigation - SEM BOLINHAS */}
+              <div className="flex items-center justify-center mt-6 gap-4">
                 <button
                   onClick={() => {
                     navigateSlide('prev');
@@ -209,25 +209,6 @@ const SocialProofSection = () => {
                 >
                   <ChevronLeft className="w-5 h-5 text-neutral-600" />
                 </button>
-                
-                {/* Dots indicator */}
-                <div className="flex items-center gap-2">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => {
-                        setCurrentSlide(index);
-                        handleUserInteraction();
-                      }}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentSlide 
-                          ? 'bg-accent w-6' 
-                          : 'bg-neutral-300 hover:bg-neutral-400'
-                      }`}
-                      aria-label={`Ir al testimonio ${index + 1}`}
-                    />
-                  ))}
-                </div>
                 
                 <button
                   onClick={() => {
@@ -326,12 +307,14 @@ const SocialProofSection = () => {
               </p>
               
               <div className="space-y-6">
-                <Button 
-                  size="lg"
-                  className="bg-white hover:bg-white/90 text-accent font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
-                >
-                  SÍ, QUIERO EMPEZAR AHORA
-                </Button>
+                <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=3" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="lg"
+                    className="bg-white hover:bg-white/90 text-accent font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
+                  >
+                    SÍ, QUIERO GANAR DINERO HOY
+                  </Button>
+                </a>
                 
                 <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/80">
                   <div className="flex items-center gap-2">
@@ -349,7 +332,6 @@ const SocialProofSection = () => {
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

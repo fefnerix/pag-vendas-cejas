@@ -10,16 +10,16 @@ const Footer = () => {
           {/* Final CTA with ebook mockup */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-purple-text">
-                Transforma tus cejas y tu <span className="text-white">futuro financiero</span>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
+                Transforma tus cejas y tu <span className="text-yellow-400">futuro financiero</span>
               </h3>
               <p className="text-purple-text/80 mb-6 max-w-md">
-                Únete a miles de mujeres que ya están ganando con el Guia Cejas Express™
+                Esta oferta NO es para siempre. Únete a miles de mujeres que ya están ganando con el Guia Cejas Express™
               </p>
               <Button 
                 className="w-full md:w-auto text-lg font-bold px-8 py-4 h-auto rounded-xl bg-success hover:bg-success/90 text-purple-text border-0 shadow-lg"
               >
-                QUIERO EMPEZAR AHORA
+                QUIERO GANAR DINERO HOY
               </Button>
             </div>
             

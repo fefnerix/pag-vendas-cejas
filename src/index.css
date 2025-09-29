@@ -1,13 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* CSS anti-overflow para prevenir scroll horizontal */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
+/* RESET: sem espaço global e sem flash branco */
+html, body, #__next, #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-* {
-  box-sizing: border-box !important;
+/* Box model previsível */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+}
+
+/* Altura padrão da barra fixa (ajuste se necessário) */
+:root { 
+  --bar-h: 56px; 
+}
+
+/* iOS notch */
+.safe-top { 
+  padding-top: env(safe-area-inset-top); 
+}
+
+/* Fallback duro contra margin-collapse no primeiro bloco do hero */
+.hero > *:first-child { 
+  margin-top: 0 !important; 
 }
 
 /* Prevent ANY element from extending beyond viewport */
@@ -41,10 +60,10 @@ html, body {
   width: 100% !important;
 }
 
-/* Seções com espaçamentos consistentes */
-section {
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
+/* Se o hero tiver classe .hero, garantir também */
+.hero {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 /* Regras de contraste e legibilidade */
@@ -136,42 +155,31 @@ p {
   }
 }
 
-/* Espaçamentos verticais consistentes para seções */
-section {
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
-}
 
-@media (min-width: 768px) {
-  section {
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
-  }
-}
 
 /* Botões com variações visuais */
 .btn-primary {
-  background: linear-gradient(135deg, #420d5f, #6b1f8a) !important;
+  background: linear-gradient(135deg, #16a34a, #15803d) !important;
   color: white !important;
   border: 2px solid transparent !important;
   font-weight: 700 !important;
   padding: 1rem 2rem !important;
   border-radius: 0.75rem !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 4px 15px rgba(66, 13, 95, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3) !important;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #ffc107, #ff9800) !important;
-  color: #420d5f !important;
+  background: linear-gradient(135deg, #15803d, #166534) !important;
+  color: white !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4) !important;
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #ffc107, #ff9800) !important;
-  color: #420d5f !important;
-  border: 2px solid #420d5f !important;
+  background: linear-gradient(135deg, #16a34a, #15803d) !important;
+  color: white !important;
+  border: 2px solid #16a34a !important;
   font-weight: 600 !important;
   padding: 0.875rem 1.75rem !important;
   border-radius: 0.75rem !important;
@@ -179,28 +187,28 @@ section {
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #420d5f, #6b1f8a) !important;
+  background: linear-gradient(135deg, #15803d, #166534) !important;
   color: white !important;
-  border-color: #ffc107 !important;
+  border-color: #16a34a !important;
   transform: translateY(-2px) !important;
 }
 
 .btn-urgent {
-  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  background: linear-gradient(135deg, #16a34a, #15803d) !important;
   color: white !important;
-  border: 2px solid #ffc107 !important;
+  border: 2px solid #16a34a !important;
   font-weight: 800 !important;
   padding: 1.25rem 2.5rem !important;
   border-radius: 0.75rem !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4) !important;
+  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.4) !important;
   position: relative !important;
 }
 
 .btn-urgent:hover {
-  background: linear-gradient(135deg, #b91c1c, #991b1b) !important;
+  background: linear-gradient(135deg, #15803d, #166534) !important;
   transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 6px 25px rgba(220, 38, 38, 0.5) !important;
+  box-shadow: 0 6px 25px rgba(22, 163, 74, 0.5) !important;
 }
 
 .btn-urgent::before {
@@ -326,19 +334,6 @@ Performance & Accessibility Optimized
     touch-action: manipulation; /* Prevent double-tap zoom */
   }
   
-  /* Section spacing for better visual breathing */
-  section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-  
-  @media (max-width: 768px) {
-    section {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-  }
-
   /* Global overflow prevention - CRITICAL FOR NO HORIZONTAL SCROLL */
   html, body {
     overflow-x: hidden !important;
@@ -395,7 +390,6 @@ Performance & Accessibility Optimized
 
   /* Enhanced mobile spacing and container fixes */
   .container,
-  .section,
   .bloco,
   .card,
   .form-wrapper {
@@ -527,13 +521,6 @@ body {
   text-wrap: balance; /* Better text wrapping */
 }
 
-.headline-section {
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
-}
-
 .subheadline-bold {
   font-weight: 700;
   line-height: 1.3;
@@ -572,7 +559,9 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    /* Gradiente que combina perfeitamente com o hero */
+    background: linear-gradient(135deg, hsl(340 75% 55%), hsl(340 75% 45%));
+    @apply text-foreground;
     /* Enhanced performance with scroll optimizations */
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -745,16 +734,6 @@ body {
   }
   
   /* Enhanced layout utilities for consistency */
-  .section-spacing {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
-  }
-
-  .section-spacing-lg {
-    padding-top: var(--space-2xl);
-    padding-bottom: var(--space-2xl);
-  }
-
   .content-spacing {
     margin-bottom: var(--space-lg);
   }
@@ -942,19 +921,6 @@ body {
   }
 }
 
-/* Espaçamento consistente entre seções */
-.section-spacing {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-@media (max-width: 767px) {
-  .section-spacing {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-}
-
 /* Espaçamento entre botões e elementos acima */
 .button-spacing {
   margin-top: 2rem;
@@ -996,4 +962,34 @@ body {
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-success { box-shadow: var(--shadow-success); }
   .shadow-elevated { box-shadow: var(--shadow-elevated); }
+}
+
+/* ===== OVERLAY LOADING SCREEN FIX ===== */
+/* CSS fallback para garantir invisibilidade do overlay de carregamento */
+.sc-gEvEer.kKIeyJ,
+div.sc-gEvEer.kKIeyJ,
+[class*="sc-gEvEer"][class*="kKIeyJ"] {
+  display: none !important;
+  background: transparent !important;
+  z-index: -1 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Reset CSS global adicional para prevenir espaçamentos indesejados */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Garantir que elementos com z-index alto não interfiram */
+[style*="z-index: 9999"],
+[style*="z-index:9999"],
+div[style*="position: fixed"][style*="top: 0"][style*="left: 0"][style*="width: 100%"][style*="height: 100%"] {
+  display: none !important;
+  visibility: hidden !important;
 }

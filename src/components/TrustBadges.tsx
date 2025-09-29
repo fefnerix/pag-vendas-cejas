@@ -34,8 +34,8 @@ const TrustBadges = ({ variant = 'default', theme = 'light', badges }: TrustBadg
     },
     certified: {
       icon: Award,
-      title: "Certificado incluido",
-      description: "Validación profesional",
+      title: "Soporte técnico",
+      description: "Asistencia profesional",
       color: "from-orange-500 to-orange-600"
     },
     rating: {

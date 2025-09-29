@@ -3,14 +3,9 @@ import { Shield, Award, Lock, Clock } from "lucide-react";
 const GuaranteeSection = () => {
   const guarantees = [
     {
-      icon: Shield,
-      title: "Garantía 7 días",
-      description: "Si no estás satisfecha, te devolvemos el 100% de tu dinero"
-    },
-    {
       icon: Award,
-      title: "Certificado incluido",
-      description: "Certificado profesional al completar el curso"
+      title: "Resultados garantizados",
+      description: "Si no ves resultados, te devolvemos 100% — sin preguntas"
     },
     {
       icon: Lock,
@@ -29,14 +24,14 @@ const GuaranteeSection = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Tu inversión está 100% protegida
+            Haz dinero o no pagas
           </h2>
           <p className="text-xl text-gray-600">
-            Compra con total confianza y seguridad
+            Tu éxito está garantizado al 100%
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {guarantees.map((guarantee, index) => {
             const IconComponent = guarantee.icon;
             return (
@@ -59,11 +54,11 @@ const GuaranteeSection = () => {
           <div className="bg-white rounded-lg p-6 shadow-lg inline-block">
             <div className="flex items-center justify-center space-x-2 mb-2">
               <Shield className="w-6 h-6 text-green-600" />
-              <span className="text-lg font-bold text-gray-900">Garantía Total</span>
+              <span className="text-lg font-bold text-gray-900">Garantía de Dinero</span>
             </div>
             <p className="text-gray-600 text-sm max-w-md">
-              Si en 7 días no ves resultados o no estás completamente satisfecha, 
-              te devolvemos el 100% de tu dinero sin preguntas.
+              7 días para probar, aplicar y empezar a cobrar. Si no ves resultados, 
+              te devolvemos 100% — sin preguntas.
             </p>
           </div>
         </div>

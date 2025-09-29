@@ -1,31 +1,28 @@
 import HeroSection from "@/components/HeroSection";
 import PricingSection from "@/components/PricingSection";
-import OptimizedSocialProof from "@/components/OptimizedSocialProof";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 import StepsSection from "@/components/StepsSection";
 import MistakesSection from "@/components/MistakesSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import IncludesSection from "@/components/IncludesSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
 import OptimizedFAQ from "@/components/OptimizedFAQ";
-import FinalUrgencySection from "@/components/FinalUrgencySection";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
-import ScarcityBar from "@/components/ScarcityBar";
+import UrgencyTopTimer from "@/components/UrgencyTopTimer";
 
 const Index = () => {
   return (
     <>
-      <main className="min-h-screen w-full overflow-x-hidden" role="main">
+      <UrgencyTopTimer />
+      <main className="min-h-screen" role="main">
         {/* 1. Hero com promessa direta + botão */}
         <HeroSection />
         
-        {/* 2. Oferta clara com valor original e preço com escassez (contador 1) */}
-        <ScarcityBar />
+        {/* 2. Prova social logo após a primeira dobra */}
+        <TestimonialCarousel />
         
         <PricingSection />
-        
-        {/* 3. Prova social leve (print de aluna + selo 4.9 + número de alunas) */}
-        <OptimizedSocialProof />
         
         {/* 4. Método explicado (passo 1, 2, 3 com ícones ou bullets) */}
         <StepsSection />
@@ -45,10 +42,7 @@ const Index = () => {
         {/* 9. FAQ enxuto (máx 5 perguntas não óbvias) */}
         <OptimizedFAQ />
         
-        {/* 10. Última chamada com botão e contador final */}
-        <FinalUrgencySection />
-        
-        {/* 11. Rodapé com links institucionais */}
+        {/* 10. Rodapé com links institucionais */}
         <Footer />
       </main>
       <FloatingCTA />

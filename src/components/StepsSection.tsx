@@ -1,13 +1,56 @@
-import { BookOpen, PlayCircle, DollarSign, ArrowRight, CheckCircle, Clock, Users, Star, Zap, TrendingUp } from "lucide-react";
+import { BookOpen, PlayCircle, DollarSign, ArrowRight, CheckCircle, Clock, Users, Star, Zap, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState, useEffect } from "react";
 
 const StepsSection = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const testimonials = [
+    {
+      quote: "En solo 3 semanas pasé de no saber nada sobre cejas a tener mi agenda llena de clientas",
+      author: "María González",
+      role: "Alumna desde 2023",
+      initial: "M"
+    },
+    {
+      quote: "Gracias a esta guía ahora genero $800 USD extra al mes trabajando desde casa",
+      author: "Carmen Rodríguez", 
+      role: "Especialista en cejas",
+      initial: "C"
+    },
+    {
+      quote: "El método es tan fácil que en 2 semanas ya tenía mis primeras clientas pagando $25 por sesión",
+      author: "Ana Martínez",
+      role: "Emprendedora",
+      initial: "A"
+    },
+    {
+      quote: "Nunca pensé que podría ganar dinero con algo tan simple. Ya recuperé mi inversión 50 veces",
+      author: "Sofía López",
+      role: "Estudiante universitaria", 
+      initial: "S"
+    },
+    {
+      quote: "Dejé mi trabajo de oficina para dedicarme a esto. Ahora gano el doble trabajando menos horas",
+      author: "Isabella Torres",
+      role: "Ex-secretaria",
+      initial: "I"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
   const steps = [
     {
       number: "01",
       icon: BookOpen,
-      title: "Aprende el método",
+      title: "Aprende las técnicas en 2-3 horas desde tu celular",
       description: "Accede al Guía Cejas Express™ y domina las técnicas de mapeo, medición y diseño profesional desde casa.",
       highlight: "Acceso inmediato",
       time: "2-3 horas",
@@ -16,7 +59,7 @@ const StepsSection = () => {
     {
       number: "02", 
       icon: PlayCircle,
-      title: "Practica con confianza",
+      title: "Practica con nuestras plantillas y gana seguridad",
       description: "Sigue el paso a paso exacto y practica las técnicas hasta sentirte 100% segura con cada movimiento.",
       highlight: "Método probado",
       time: "1-2 semanas",
@@ -25,7 +68,7 @@ const StepsSection = () => {
     {
       number: "03",
       icon: DollarSign,
-      title: "Empieza a ganar",
+      title: "Atiende tus primeras clientas y cobra $30+ por sesión",
       description: "Atiende tus primeras clientas y genera $200+ por semana trabajando desde la comodidad de tu hogar.",
       highlight: "Resultados reales",
       time: "Desde la 1ª semana",
@@ -101,8 +144,8 @@ const StepsSection = () => {
                     <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-3xl flex items-center justify-center text-white font-black text-2xl shadow-xl`}>
                       {step.number}
                     </div>
-                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-neutral-100">
-                      <step.icon className="w-8 h-8 text-neutral-700" />
+                    <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center text-white shadow-lg`}>
+                      <step.icon className="w-8 h-8" />
                     </div>
                   </div>
 
@@ -126,15 +169,9 @@ const StepsSection = () => {
                   </div>
                 </div>
 
-                {/* Visual element */}
+                {/* Visual element - removed blank squares */}
                 <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} flex justify-center`}>
                   <div className="relative">
-                    <div className={`w-80 h-80 bg-gradient-to-br ${step.color} rounded-3xl opacity-20`} />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className={`w-32 h-32 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center shadow-2xl`}>
-                        <step.icon className="w-16 h-16 text-white" />
-                      </div>
-                    </div>
                     {/* Connection arrow for next step - hidden on small screens to prevent overflow */}
                     {index < steps.length - 1 && (
                       <div className="hidden sm:block absolute -bottom-8 left-1/2 transform -translate-x-1/2">
@@ -149,7 +186,7 @@ const StepsSection = () => {
             ))}
           </div>
 
-          {/* Testimonial-style CTA instead of traditional CTA */}
+          {/* Testimonial Carousel CTA */}
           <div className="bg-gradient-to-r from-neutral-900 via-primary to-neutral-900 rounded-3xl p-12 text-white text-center relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5" />
@@ -159,27 +196,50 @@ const StepsSection = () => {
                 <Star className="w-10 h-10 text-accent" />
               </div>
               
-              <blockquote className="text-2xl lg:text-3xl font-bold mb-6 leading-relaxed">
-                "En solo 3 semanas pasé de no saber nada sobre cejas a tener mi agenda llena de clientas"
-              </blockquote>
+              <div className="min-h-[120px] flex items-center justify-center">
+                <blockquote className="text-2xl lg:text-3xl font-bold mb-6 leading-relaxed transition-all duration-500">
+                  "{testimonials[currentTestimonial].quote}"
+                </blockquote>
+              </div>
               
               <div className="flex items-center justify-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">M</span>
+                  <span className="text-white font-bold">{testimonials[currentTestimonial].initial}</span>
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold">María González</div>
-                  <div className="text-white/70 text-sm">Alumna desde 2023</div>
+                  <div className="font-semibold">{testimonials[currentTestimonial].author}</div>
+                  <div className="text-white/70 text-sm">{testimonials[currentTestimonial].role}</div>
                 </div>
+              </div>
+
+              {/* Carousel navigation - Minimalist arrows */}
+              <div className="flex justify-center gap-4 mb-8">
+                <button
+                  onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300"
+                  aria-label="Testimonio anterior"
+                >
+                  <ChevronLeft className="w-5 h-5 text-white" />
+                </button>
+                
+                <button
+                  onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300"
+                  aria-label="Siguiente testimonio"
+                >
+                  <ChevronRight className="w-5 h-5 text-white" />
+                </button>
               </div>
               
               <div className="space-y-4">
-                <Button 
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-white font-black text-xl px-12 py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[70px]"
-                >
-                  COMENZAR MI TRANSFORMACIÓN
-                </Button>
+                <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=4" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="lg"
+                    className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] sm:min-h-[70px]"
+                  >
+                    QUIERO GANAR DINERO HOY
+                  </Button>
+                </a>
                 
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80">
                   <div className="flex items-center gap-2">

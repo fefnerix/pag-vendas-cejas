@@ -1,4 +1,4 @@
-import { Check, Play, Users, Gift, BookOpen, Clock, Star, Shield, Zap, Award, TrendingUp } from 'lucide-react';
+import { Check, BookOpen, Users, Gift, Clock, Star, Shield, Zap, TrendingUp } from 'lucide-react';
 import courseBook from "@/assets/brow-course-book-new.jpg";
 
 const IncludesSection = () => {
@@ -12,9 +12,9 @@ const IncludesSection = () => {
       featured: true
     },
     {
-      icon: Play,
-      title: "Videoaulas desde celular",
-      description: "Contenido optimizado para aprender desde cualquier lugar",
+      icon: BookOpen,
+      title: "Técnicas avanzadas de diseño",
+      description: "Métodos profesionales para crear cejas perfectas",
       color: "from-purple-500 to-purple-600",
       featured: false
     },
@@ -26,19 +26,19 @@ const IncludesSection = () => {
       featured: true
     },
     {
-      icon: Award,
-      title: "Certificado profesional",
-      description: "Documento que valida tus conocimientos",
+      icon: Shield,
+      title: "Garantía de satisfacción",
+      description: "7 días para probar sin riesgo",
       color: "from-yellow-500 to-yellow-600",
       featured: false
     }
   ];
 
   const bonusContent = [
-    { icon: TrendingUp, title: "Guía de precios", value: "$47" },
-    { icon: Star, title: "Templates publicitarios", value: "$37" },
-    { icon: Shield, title: "Soporte 24/7", value: "$97" },
-    { icon: Zap, title: "Actualizaciones", value: "$27" }
+    { icon: TrendingUp, title: "Bono 1 – Formato del Rostro", value: "$97" },
+    { icon: Star, title: "Bono 2 – Errores Comunes y Cómo Resolverlos", value: "$67" },
+    { icon: Shield, title: "Soporte técnico 24/7", value: "$97" },
+    { icon: Zap, title: "Actualizaciones gratuitas de por vida", value: "$26" }
   ];
 
   return (
@@ -113,7 +113,7 @@ const IncludesSection = () => {
                     Bonos exclusivos incluidos
                   </h3>
                   <p className="text-neutral-600">
-                    Valor total de los bonos: <span className="text-accent font-bold text-xl">$208</span>
+                    Valor total de los bonos: <span className="text-accent font-bold text-xl">$287</span>
                   </p>
                 </div>
                 
@@ -150,16 +150,18 @@ const IncludesSection = () => {
                   {/* Pricing section */}
                   <div className="space-y-6">
                     <div>
-                      <div className="text-neutral-500 line-through text-lg mb-2">$208 USD</div>
+                      <div className="text-neutral-500 line-through text-lg mb-2">$287 USD</div>
                       <div className="text-4xl font-black text-accent mb-2">$7 USD</div>
                       <div className="text-sm text-neutral-600">Precio especial de lanzamiento</div>
                     </div>
                     
                     {/* CTA buttons */}
                     <div className="space-y-3">
-                      <button className="w-full bg-gradient-to-r from-success to-success/90 hover:from-success/95 hover:to-success/85 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                        DESCARGAR MI GUÍA AHORA
-                      </button>
+                      <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=2" target="_blank" rel="noopener noreferrer">
+                        <button className="w-full bg-gradient-to-r from-success to-success/90 hover:from-success/95 hover:to-success/85 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          DESCARGAR POR $7
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>

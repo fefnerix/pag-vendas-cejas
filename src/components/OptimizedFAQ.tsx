@@ -14,8 +14,8 @@ const OptimizedFAQ = () => {
       answer: "No. Te enseñamos a trabajar con productos básicos que puedes conseguir en cualquier lugar. También incluimos una lista de proveedores confiables con precios mayoristas."
     },
     {
-      question: "¿Cuánto tiempo dura el curso?",
-      answer: "El contenido principal son 4 horas de video, pero tienes acceso de por vida. Puedes completarlo en un fin de semana o ir a tu ritmo. La mayoría empieza a practicar desde la primera semana."
+      question: "¿Cuánto tiempo dura la guía?",
+      answer: "La guía completa incluye manual paso a paso con técnicas detalladas que puedes estudiar a tu ritmo. Puedes completarla en un fin de semana o ir avanzando gradualmente. La mayoría empieza a practicar desde la primera semana."
     },
     {
       question: "¿Cuándo puedo empezar a ganar dinero?",
@@ -23,7 +23,7 @@ const OptimizedFAQ = () => {
     },
     {
       question: "¿Tengo acceso al grupo privado?",
-      answer: "Sí, incluye acceso al grupo privado de WhatsApp donde resolvemos dudas, compartimos tips y celebramos los éxitos. Es una comunidad muy activa de más de 5.000 alumnas."
+      answer: "Sí, incluye acceso al grupo privado de WhatsApp donde resolvemos dudas, compartimos tips y celebramos los éxitos. Es una comunidad muy activa de más de 80.000 alumnas."
     }
   ];
 
@@ -72,9 +72,14 @@ const OptimizedFAQ = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="btn-primary">
-            RESOLVER MIS DUDAS Y EMPEZAR
-          </button>
+          <a href="https://wa.me/5524981164222?text=Hola%2C%20quiero%20tirar%20dudas%20sobre%20el%20Gu%C3%ADa%20Completo%20de%20Dise%C3%B1o%20de%20Cejas" target="_blank" rel="noopener noreferrer">
+            <button className="btn-primary">
+              RESOLVER MIS DUDAS
+            </button>
+          </a>
+          <p className="text-sm text-gray-600 mt-3">
+            Habla con nuestros consultores especializados
+          </p>
         </div>
       </div>
     </div>

@@ -7,23 +7,23 @@ const MistakesSection = () => {
   
   const mistakes = [
     {
-      title: "Intentar aprender sola en internet",
-      description: "Pierdes tiempo con tutoriales incompletos",
+      title: "Seguir en YouTube = perder semanas sin ganar",
+      description: "Pierdes tiempo con tutoriales incompletos y nunca generas ingresos",
       Icon: AlertCircle
     },
     {
-      title: "Arruinar el diseño por no saber mapear", 
-      description: "Resultados desiguales y clientes insatisfechas",
+      title: "Mapear mal = arruinar cejas, perder clientas", 
+      description: "Resultados desiguales que dañan tu reputación y ahuyentan clientes",
       Icon: Target
     },
     {
-      title: "Cobrar muy poco por falta de seguridad",
-      description: "Subvaloras tu trabajo y pierdes ingresos",
+      title: "Cobrar barato = trabajar como esclava y seguir sin plata",
+      description: "Subvaloras tu trabajo y nunca sales de la pobreza",
       Icon: DollarSign
     },
     {
-      title: "Rendirse antes de tener resultados",
-      description: "Abandonas por no tener un guia claro",
+      title: "Rendirse = dejar $200/semana en la mesa",
+      description: "Abandonas la oportunidad de generar ingresos constantes",
       Icon: FileX
     }
   ];
@@ -40,7 +40,7 @@ const MistakesSection = () => {
           <div className="text-center mb-fluid-lg">
             <h2 
               id="mistakes-heading"
-              className={`text-fluid-2xl lg:text-fluid-4xl font-bold text-white mb-fluid-xs transition-smooth ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
+              className={`text-fluid-2xl lg:text-fluid-4xl font-bold text-purple-400 mb-fluid-xs transition-smooth ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
             >
               Los errores más comunes que cometen las principiantes:
             </h2>
@@ -76,12 +76,11 @@ const MistakesSection = () => {
           {/* Single green CTA button */}
           <div className="text-center mt-8">
             <Button 
-              variant="success" 
               size="lg" 
-              className="w-full sm:w-auto font-medium px-8 py-3 rounded-xl shadow-md"
+              className="w-full sm:w-auto font-medium px-8 py-3 rounded-xl shadow-md bg-green-500 hover:bg-green-600 text-white"
               aria-label="Descargar guía paso a paso para diseño de cejas"
             >
-              QUIERO EVITAR ESTOS ERRORES
+              QUIERO GANAR DINERO HOY
             </Button>
           </div>
         </div>
