@@ -16,11 +16,20 @@ const Footer = () => {
               <p className="text-purple-text/80 mb-6 max-w-md">
                 Esta oferta NO es para siempre. Únete a miles de mujeres que ya están ganando con el Guia Cejas Express™
               </p>
-              <Button 
-                className="w-full md:w-auto text-lg font-bold px-8 py-4 h-auto rounded-xl bg-success hover:bg-success/90 text-purple-text border-0 shadow-lg"
+              <a
+                href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=footer"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  (window as any).fbq?.('track', 'InitiateCheckout');
+                }}
               >
-                QUIERO GANAR DINERO HOY
-              </Button>
+                <Button 
+                  className="w-full md:w-auto text-lg font-bold px-8 py-4 h-auto rounded-xl bg-success hover:bg-success/90 text-purple-text border-0 shadow-lg"
+                >
+                  QUIERO GANAR DINERO HOY
+                </Button>
+              </a>
             </div>
             
             <div className="flex justify-center">

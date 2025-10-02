@@ -124,12 +124,21 @@ const FAQSection = () => {
               </p>
               
               <div className="space-y-6">
-                <Button 
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-neutral-900 font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
+                <a
+                  href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=faq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    (window as any).fbq?.('track', 'InitiateCheckout');
+                  }}
                 >
-                  DESCARGAR POR $7
-                </Button>
+                  <Button 
+                    size="lg"
+                    className="bg-accent hover:bg-accent/90 text-neutral-900 font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
+                  >
+                    DESCARGAR POR $7
+                  </Button>
+                </a>
                 
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80">
                   <div className="flex items-center gap-2">
