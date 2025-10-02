@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { buildCheckoutUrl } from "@/lib/utils";
 import { AlertCircle, FileX, DollarSign, Target } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
@@ -76,7 +77,7 @@ const MistakesSection = () => {
           {/* Single green CTA button */}
           <div className="text-center mt-8">
             <a
-              href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=mistakes"
+              href={buildCheckoutUrl("4")}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {

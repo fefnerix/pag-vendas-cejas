@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { buildCheckoutUrl } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { CheckCircle, Star, Gift, Zap, Shield, Clock, Users, TrendingUp, Smartphone, RefreshCw, MessageCircle, Phone } from "lucide-react";
@@ -200,7 +201,7 @@ const PricingSection = () => {
           <div className={`text-center space-y-6 sm:space-y-8 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/20">
               <a
-                href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=6"
+                href={buildCheckoutUrl("2")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {

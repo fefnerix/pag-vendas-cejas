@@ -1,5 +1,6 @@
 import { Check, BookOpen, Users, Gift, Clock, Star, Shield, Zap, TrendingUp } from 'lucide-react';
 import courseBook from "@/assets/brow-course-book-new.jpg";
+import { buildCheckoutUrl } from "@/lib/utils";
 
 const IncludesSection = () => {
 
@@ -158,7 +159,7 @@ const IncludesSection = () => {
                     {/* CTA buttons */}
                     <div className="space-y-3">
                       <a
-                        href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=2"
+                        href={buildCheckoutUrl("6")}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => {

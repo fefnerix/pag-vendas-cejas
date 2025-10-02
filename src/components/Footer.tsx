@@ -1,5 +1,6 @@
 import { Star, Shield, CreditCard, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { buildCheckoutUrl } from "@/lib/utils";
 import courseBook from "@/assets/brow-course-book-new.jpg";
 
 const Footer = () => {
@@ -17,7 +18,7 @@ const Footer = () => {
                 Esta oferta NO es para siempre. Únete a miles de mujeres que ya están ganando con el Guia Cejas Express™
               </p>
               <a
-                href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=footer"
+                href={buildCheckoutUrl("7")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {

@@ -1,5 +1,6 @@
 import { BookOpen, PlayCircle, DollarSign, ArrowRight, CheckCircle, Clock, Users, Star, Zap, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { buildCheckoutUrl } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 
@@ -233,7 +234,7 @@ const StepsSection = () => {
               
               <div className="space-y-4">
                 <a
-                  href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=4"
+                  href={buildCheckoutUrl("3")}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {

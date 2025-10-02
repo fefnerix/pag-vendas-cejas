@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { buildCheckoutUrl } from "@/lib/utils";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -36,7 +37,7 @@ const BenefitsSection = () => {
         
         <div className="text-center mt-12">
           <a
-            href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=5"
+            href={buildCheckoutUrl("5")}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
