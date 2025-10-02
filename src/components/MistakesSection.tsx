@@ -75,13 +75,22 @@ const MistakesSection = () => {
 
           {/* Single green CTA button */}
           <div className="text-center mt-8">
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto font-medium px-8 py-3 rounded-xl shadow-md bg-green-500 hover:bg-green-600 text-white"
-              aria-label="Descargar guía paso a paso para diseño de cejas"
+            <a
+              href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=mistakes"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                (window as any).fbq?.('track', 'InitiateCheckout');
+              }}
             >
-              QUIERO GANAR DINERO HOY
-            </Button>
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto font-medium px-8 py-3 rounded-xl shadow-md bg-green-500 hover:bg-green-600 text-white"
+                aria-label="Descargar guía paso a paso para diseño de cejas"
+              >
+                QUIERO GANAR DINERO HOY
+              </Button>
+            </a>
           </div>
         </div>
       </div>
