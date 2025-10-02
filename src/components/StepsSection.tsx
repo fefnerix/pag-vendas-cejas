@@ -232,7 +232,14 @@ const StepsSection = () => {
               </div>
               
               <div className="space-y-4">
-                <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=4" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    (window as any).fbq?.('track', 'InitiateCheckout');
+                  }}
+                >
                   <Button 
                     size="lg"
                     className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] sm:min-h-[70px]"

@@ -199,7 +199,14 @@ const PricingSection = () => {
           {/* Enhanced CTA section - Mobile-first */}
           <div className={`text-center space-y-6 sm:space-y-8 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/20">
-              <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=6" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=6"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  (window as any).fbq?.('track', 'InitiateCheckout');
+                }}
+              >
                 <Button 
                   size="lg" 
                   className="bg-green-600 hover:bg-green-700 text-white font-black min-h-[60px] sm:min-h-[70px] w-full sm:w-auto mb-6 sm:mb-8 text-lg sm:text-xl lg:text-2xl px-8 sm:px-12 lg:px-16 py-4 sm:py-6 lg:py-8 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300"

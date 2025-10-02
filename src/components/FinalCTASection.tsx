@@ -118,7 +118,14 @@ const FinalCTASection = () => {
 
               {/* Enhanced CTA button */}
               <div className="space-y-4">
-                <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=8" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    (window as any).fbq?.('track', 'InitiateCheckout');
+                  }}
+                >
                   <Button 
                     size="lg"
                     className="w-full bg-accent hover:bg-accent/90 text-neutral-900 font-black text-xl lg:text-2xl px-12 py-8 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300 min-h-[80px] border-2 border-white/20"

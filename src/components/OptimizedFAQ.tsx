@@ -72,7 +72,14 @@ const OptimizedFAQ = () => {
         </div>
 
         <div className="text-center mt-12">
-          <a href="https://wa.me/5524981164222?text=Hola%2C%20quiero%20tirar%20dudas%20sobre%20el%20Gu%C3%ADa%20Completo%20de%20Dise%C3%B1o%20de%20Cejas" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://wa.me/5524981164222?text=Hola%2C%20quiero%20tirar%20dudas%20sobre%20el%20Gu%C3%ADa%20Completo%20de%20Dise%C3%B1o%20de%20Cejas"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              (window as any).fbq?.('track', 'Contact');
+            }}
+          >
             <button className="btn-primary">
               RESOLVER MIS DUDAS
             </button>

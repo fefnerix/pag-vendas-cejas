@@ -307,7 +307,14 @@ const SocialProofSection = () => {
               </p>
               
               <div className="space-y-6">
-                <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=3" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    (window as any).fbq?.('track', 'InitiateCheckout');
+                  }}
+                >
                   <Button 
                     size="lg"
                     className="bg-white hover:bg-white/90 text-accent font-black text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"

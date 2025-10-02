@@ -157,7 +157,14 @@ const IncludesSection = () => {
                     
                     {/* CTA buttons */}
                     <div className="space-y-3">
-                      <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=2" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          (window as any).fbq?.('track', 'InitiateCheckout');
+                        }}
+                      >
                         <button className="w-full bg-gradient-to-r from-success to-success/90 hover:from-success/95 hover:to-success/85 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                           DESCARGAR POR $7
                         </button>

@@ -35,7 +35,14 @@ const BenefitsSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=5" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://pay.hotmart.com/B102079638B?checkoutMode=10&src=5"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              (window as any).fbq?.('track', 'InitiateCheckout');
+            }}
+          >
             <button className="btn-primary">
               TRANSFORMAR MI VIDA
             </button>
