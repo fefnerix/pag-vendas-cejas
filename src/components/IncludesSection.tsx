@@ -1,8 +1,19 @@
 import { Check, BookOpen, Users, Gift, Clock, Star, Shield, Zap, TrendingUp } from 'lucide-react';
 import courseBook from "@/assets/brow-course-book-new.jpg";
-import { buildCheckoutUrl } from "@/lib/utils";
+import { buildCheckoutUrl, trackFb } from "@/lib/utils";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useEffect, useRef } from "react";
 
 const IncludesSection = () => {
+  const { isVisible, elementRef } = useIntersectionObserver({ threshold: 0.2 });
+  const hasTrackedView = useRef(false);
+
+  useEffect(() => {
+    if (isVisible && !hasTrackedView.current) {
+      trackFb('ViewContent', { content_name: 'IncludesSection' });
+      hasTrackedView.current = true;
+    }
+  }, [isVisible]);
 
   const mainFeatures = [
     {
@@ -43,7 +54,7 @@ const IncludesSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-neutral-50 via-white to-neutral-50 relative overflow-hidden">
+    <section ref={elementRef} className="py-16 lg:py-24 bg-gradient-to-br from-neutral-50 via-white to-neutral-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
       <div className="absolute top-10 right-10 w-32 sm:w-36 lg:w-40 h-32 sm:h-36 lg:h-40 bg-accent/10 rounded-full blur-3xl max-w-[calc(100vw-2rem)]" />

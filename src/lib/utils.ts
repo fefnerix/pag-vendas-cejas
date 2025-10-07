@@ -17,3 +17,12 @@ export function buildCheckoutUrl(src: string): string {
   }
   return `${base}&src=${encodeURIComponent(src)}`;
 }
+
+// Safe Meta Pixel tracking helper
+export function trackFb(event: string, params?: Record<string, any>) {
+  try {
+    (window as any).fbq?.('track', event, params);
+  } catch {
+    // no-op: avoid runtime errors if pixel is blocked
+  }
+}

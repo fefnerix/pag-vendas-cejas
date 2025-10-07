@@ -1,11 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { buildCheckoutUrl } from "@/lib/utils";
+import { buildCheckoutUrl, trackFb } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { CheckCircle, Star, Gift, Zap, Shield, Clock, Users, TrendingUp, Smartphone, RefreshCw, MessageCircle, Phone } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const PricingSection = () => {
   const { isVisible, elementRef } = useIntersectionObserver({ threshold: 0.2 });
+  const hasTrackedView = useRef(false);
+
+  useEffect(() => {
+    if (isVisible && !hasTrackedView.current) {
+      trackFb('ViewContent', { content_name: 'PricingSection' });
+      hasTrackedView.current = true;
+    }
+  }, [isVisible]);
 
   const mainFeatures = [
     {

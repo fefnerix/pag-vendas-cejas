@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackFb } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const OptimizedFAQ = () => {
@@ -77,7 +78,8 @@ const OptimizedFAQ = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
-              (window as any).fbq?.('track', 'Contact');
+              trackFb('Contact');
+              trackFb('Lead');
             }}
           >
             <button className="btn-primary">
