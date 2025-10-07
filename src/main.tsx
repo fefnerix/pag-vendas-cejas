@@ -2,6 +2,42 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
+// ===== META PIXEL FALLBACK INIT =====
+// Garante que o Pixel seja iniciado mesmo se o index.html não carregar o snippet
+function initMetaPixelIfMissing() {
+  const w = window as any;
+  if (w.fbq) {
+    // Já existe fbq (provavelmente vindo do index.html)
+    return;
+  }
+  (function (f: any, b: Document, e: string, v: string, n?: any, t?: HTMLScriptElement, s?: Element) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments as any) : n.queue.push(arguments as any);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = "2.0";
+    n.queue = [];
+    t = b.createElement(e) as HTMLScriptElement;
+    t.async = true;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0] as Element;
+    s.parentNode?.insertBefore(t, s);
+  })(window as any, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+  try {
+    (window as any).fbq("init", "1265651664965507");
+    (window as any).fbq("track", "PageView");
+    console.log("Meta Pixel fallback inicializado");
+  } catch (err) {
+    console.warn("Falha ao inicializar Meta Pixel fallback", err);
+  }
+}
+
+initMetaPixelIfMissing();
+
 // ===== OVERLAY LOADING SCREEN REMOVAL ===== 
 // JavaScript para remoção dinâmica do overlay de carregamento
 function removeLoadingOverlay() {
